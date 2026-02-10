@@ -1,9 +1,8 @@
 """
-Thor Framework - Hello World Example
+Thor Framework - Hello World sample
 
 This demonstrates the basic usage of the Thor micro web framework.
-Run with: uvicorn main:app --reload
-Or use: python main.py
+Run with: uv run uvicorn sample:app --reload
 """
 
 
