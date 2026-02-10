@@ -1,0 +1,5 @@
+project-includes = ["src/thor"]
+search-path = ["src"]
+python-version = "3.14.0"
+ignore-missing-imports = ["uvicorn.*"]
+untyped-def-behavior = "skip-and-infer-return-any"
