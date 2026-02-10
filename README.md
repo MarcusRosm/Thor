@@ -13,7 +13,7 @@ A Python 3.14 micro web framework built on top of uvicorn with modern async/awai
 - **🔗 Middleware**: Chain of responsibility pattern with CORS, logging, error handling
 
 
-## Quick Start
+## Quick Start 
 
 ```python
 from thor import Thor, Request
@@ -32,20 +32,16 @@ if __name__ == "__main__":
 
 ```bash
 # Using uv
-uv pip install -e .
+uv sync
 
-# Or with development dependencies
-uv pip install -e ".[dev]"
 ```
 
 ## Running the Example
 
 ```bash
 # Using uvicorn directly
-uvicorn main:app --reload
+uv run uvicorn sample:app --reload
 
-# Or run the main file
-python main.py
 ```
 
 ## Core Components
@@ -88,7 +84,7 @@ async def counter(request: Request) -> dict:
     return {"count": session["count"]}
 ```
 
-### Authentication
+### Authentication (for demonstration purposes only - be careful how you do this in production)
 
 ```python
 from thor import Thor
@@ -157,7 +153,7 @@ Thor defaults to **HS256** (symmetric HMAC). This is the right choice when a sin
 | | HS256 (symmetric) | RS256 (asymmetric) |
 |---|---|---|
 | **Keys** | One shared secret key | Private key (sign) + Public key (verify) |
-| **Performance** | Fast — HMAC-SHA256 | ~10x slower — RSA operations |
+| **Performance** | Fast — HMAC-SHA256 | slower — RSA operations |
 | **Best for** | Single service / monolith | Microservices, third-party consumers |
 | **Security model** | Any service with the key can issue & verify | Only the issuer holds the private key; verifiers use the public key and **cannot forge tokens** |
 
