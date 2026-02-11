@@ -1,6 +1,7 @@
 # Thor ⚡
 
 A Python 3.14 micro web framework built on top of uvicorn with modern async/await support.
+🚧 Thor is still under development.
 
 ## Features
 
